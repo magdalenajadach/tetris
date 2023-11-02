@@ -9,8 +9,6 @@ const App = () => {
       <Header />
       <section className="game__container">
         <Game />
-        <button>Score</button>
-        <button>Start game</button>
       </section>
     </div>
   );

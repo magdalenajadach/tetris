@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Display = ({ gameOver, text }) => {
+const Button = ({ gameOver, text }) => {
   return (
     <>
       <h2>{text}</h2>
@@ -9,9 +9,9 @@ const Display = ({ gameOver, text }) => {
   );
 };
 
-Display.propTypes = {
+Button.propTypes = {
   gameOver: PropTypes.string,
   text: PropTypes.string,
 };
 
-export default Display;
+export default Button;
