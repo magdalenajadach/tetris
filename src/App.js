@@ -1,13 +1,17 @@
-import './App.scss';
+import { Header } from "./components/Header/Header";
+import {Game} from "./components/Game/Game"
+
+import "./App.scss";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>
-          Tetris
-        </h1>
-      </header>
+    <div className="app">
+      <Header />
+      <section className="game__container">
+				<Game />
+        <button>Score</button>
+        <button>Start game</button>
+      </section>
     </div>
   );
 }
