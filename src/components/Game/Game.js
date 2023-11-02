@@ -1,5 +1,16 @@
-import './Game.scss'
+import "./Game.scss";
+import Square from "../Square/Square";
+import React from "react";
 
-export function Game() {
-  return <h2>Game</h2>;
-}
+const Game = ({}) => {
+  return (
+    <>
+      <h2>Game</h2>
+      <Square />
+    </>
+  );
+};
+
+Game.propTypes = {};
+
+export default Game;
