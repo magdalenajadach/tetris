@@ -2,14 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Square from "../Square/Square";
+import { StyledStage } from "../styles/StyledStage";
 
 const Stage = ({ stage }) => {
   return (
-    <div>
+    <StyledStage width={stage[0].length} height={stage.length}>
       {stage.map((row) =>
         row.map((square, x) => <Square key={x} type={square[0]} />)
       )}
-    </div>
+    </StyledStage>
   );
 };
 
