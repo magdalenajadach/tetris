@@ -6,7 +6,7 @@ import { TETROMINOS } from "../../helpers/tetrominosHelper";
 const Square = ({ type }) => {
   return (
     <StyledSquare type={"L"} color={TETROMINOS["L"].color}>
-      Cube
+      M
     </StyledSquare>
   );
 };

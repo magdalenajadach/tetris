@@ -13,11 +13,12 @@ export const StyledGame = styled.div`
   padding-inline: 2.5rem;
   margin-inline: auto;
   margin-block: 0;
+  max-width: 30vw;
 
   aside {
     width: 100%;
     display: block;
-		padding-block: 0;
-		padding-inline: 1.25rem;
+    padding-block: 0;
+    padding-inline: 1.25rem;
   }
 `;
