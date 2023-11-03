@@ -4,11 +4,7 @@ import { StyledSquare } from "../styles/StyledSquare";
 import { TETROMINOS } from "../../helpers/tetrominosHelper";
 
 const Square = ({ type }) => {
-  return (
-    <StyledSquare type={"L"} color={TETROMINOS["L"].color}>
-      M
-    </StyledSquare>
-  );
+  return <StyledSquare type={"L"} color={TETROMINOS["L"].color} />;
 };
 
 Square.propTypes = {
