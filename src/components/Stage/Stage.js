@@ -15,7 +15,7 @@ const Stage = ({ stage }) => {
 };
 
 Stage.propTypes = {
-  stage: PropTypes.string,
+  stage: PropTypes.array,
 };
 
 export default Stage;
