@@ -63,7 +63,7 @@ const Game = () => {
               <Button text="Rows" />
             </div>
           )}
-          <StartButton onClick={startGame} />
+          <StartButton callback={startGame} />
         </aside>
       </StyledGame>
     </StyledGameWraper>
