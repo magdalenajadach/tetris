@@ -7,9 +7,9 @@ export const StyledStage = styled.div`
     ${(props) => props.height},
     calc(15vw / ${(props) => props.width})
   );
-	grid-gap: 1px;
-	border: 2px solid #ff8fab;
-	width: 100%;
-	max-width: 25vw;
-	background: #ffb3c6;
+  grid-gap: 1px;
+  border: 2px solid #edcbb1;
+  width: 100%;
+  max-width: 25vw;
+  background: #929982;
 `;
