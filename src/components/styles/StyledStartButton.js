@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const StyledStartButton = styled.button`
-	border: 2px solid #ff8fab;
-	width: 100%;
-	background: #03eddd;
+  border: 2px solid #282c34;
+  border-radius: 8px;
+  background: #929982;
+  padding: 0.5rem 0.75rem;
 `;
