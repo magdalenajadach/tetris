@@ -1,33 +1,45 @@
-import "./Game.scss";
-import Stage from "../Stage/Stage";
-import Button from "../shared/Button/Button";
-import StartButton from "../StartButton/StartButton";
 import React, { useState } from "react";
-import { createStage } from "../../helpers/createStageHelper";
+import { createStage, checkCollision } from "../../helpers/createStageHelper";
 import { StyledGame, StyledGameWraper } from "../styles/StyledGame";
 import { usePlayer } from "../../hooks/usePlayer";
 import { useStage } from "../../hooks/useStage";
+import Stage from "../Stage/Stage";
+import Button from "../shared/Button/Button";
+import StartButton from "../StartButton/StartButton";
 
 const Game = () => {
   const [dropTime, setDropTime] = useState(null);
   const [gameOver, setGameOver] = useState(false);
-  const [player, updatePlayerPosition, resetPlayer] = usePlayer();
+  const [player, updatePlayerPosition, resetPlayer, playerRotate] = usePlayer();
   const [stage, setStage] = useStage(player);
 
   console.log("re-render");
 
   const movePlayer = (dir) => {
-    updatePlayerPosition({ x: dir, y: 0 });
+    if (!checkCollision(player, stage, { x: dir, y: 0 })) {
+      updatePlayerPosition({ x: dir, y: 0 });
+    }
   };
 
   const startGame = () => {
-    //reset the game
+    // reset the game
     setStage(createStage());
     resetPlayer();
+    setGameOver(false);
   };
 
   const drop = () => {
-    updatePlayerPosition({ x: 0, y: 1, collided: false });
+    if (!checkCollision(player, stage, { x: 0, y: 1 })) {
+      updatePlayerPosition({ x: 0, y: 1, collided: false });
+    } else {
+      if (player.position.y < 1) {
+        // Game over
+        console.log("game over");
+        setGameOver(true);
+        setDropTime(null);
+      }
+      updatePlayerPosition({ x: 0, y: 0, collided: true });
+    }
   };
 
   const dropPlayer = () => {
@@ -45,6 +57,9 @@ const Game = () => {
       } else if (keyCode === 40) {
         // 40 - arrow down
         dropPlayer();
+      } else if (keyCode === 38) {
+        // 38 - arrow up?
+        playerRotate(stage, 1);
       }
     }
   };
@@ -69,7 +84,5 @@ const Game = () => {
     </StyledGameWraper>
   );
 };
-
-Game.propTypes = {};
 
 export default Game;
